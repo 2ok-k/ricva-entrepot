@@ -21,6 +21,14 @@ const sidebar = document.getElementById('sidebar');
 /*menuBar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
 })*/
+  document.addEventListener("DOMContentLoaded", function () {
+  const dropdownTriggers = document.querySelectorAll(".user-box, .language-box");
+  dropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", function () {
+      this.classList.toggle("open");
+    });
+  });
+});
 
 
 

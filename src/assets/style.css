@@ -400,7 +400,7 @@ body {
 	color: var(--dark);
 }
 #content main .box-info li .text p {
-	color: var(--dark);	
+	color: var(--dark);
 }
 
 
@@ -589,4 +589,5 @@ body {
 	#content main .table-data .todo .todo-list {
 		min-width: 420px;
 	}
+
 }
