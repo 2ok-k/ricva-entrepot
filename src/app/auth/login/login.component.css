@@ -1,0 +1,44 @@
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('src/assets/images/imageRicva.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+  color: #c15e0c;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  width: 300px;
+  margin-left: 19%;
+  padding: 0.5rem 0.5rem;
+  background-color: #d27532 !important;
+  color: white;
+}
+
+.btn-login:hover{
+  background-color: #b9590c !important;
+}
+.small-text{
+  color: #707070;
+}
+
+.resetPwd {
+  color: #c15e0c;
+  text-decoration: none;
+}
+.switch {
+  color: #c15e0c;
+  text-decoration: none;
+}
+
+.form-control{
+  outline-style: none;
+}
