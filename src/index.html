@@ -11,9 +11,37 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <!-- My CSS -->
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 </head>
 <body>
   <app-root></app-root>
   <script src="assets/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(function() {
+      $(document).ready(function() {
+        $('#example').DataTable();
+      });
+    });
+    $(document).ready(function() {
+      $('#example').dataTable({
+        "bPaginate": true,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": false,
+        "bAutoWidth": false,
+        "ordering": false,
+        "language": {
+          "search": "Recherche:",
+            paginate: {
+              next: '&#8594;', // or '→'
+              previous: '&#8592;' // or '←'
+            }
+        }
+      })
+    });
+  </script>
 </body>
 </html>

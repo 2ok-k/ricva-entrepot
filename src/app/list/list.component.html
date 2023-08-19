@@ -1,0 +1,145 @@
+<div class="row">
+  <div class="col-md-2 col-sm-4 menu-card">
+    <div class="mobile-menu-toggle">
+      <i class="bx bx-menu"></i>
+    </div>
+    <div class="menu-items">
+      <div>
+        <a href="" class="menu-item">Campagnes</a> <span style="margin-left: 45%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Détails campagnes</a> <span style="margin-left: 23%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Spéculations</a> <span style="margin-left: 43%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item d-flex">Détails Spéculations <span style="margin-left: 23%">12</span></a>
+      </div>
+      <br>
+      <div>
+        <a href="" class="btn menu-item active d-flex mr-5">Entrepots <span style="margin-left: 80%">12</span></a>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Groupements</a> <span style="margin-left: 41%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Exportateurs</a> <span style="margin-left: 44%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item d-flex">Affectations exportateurs <span style="margin-left: 7%">12</span></a>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Villes</a> <span style="margin-left: 68%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Sites</a> <span style="margin-left: 70%">12</span>
+      </div>
+      <br>
+      <div>
+        <a href="" class="menu-item">Zonages</a> <span style="margin-left: 57%">12</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9 content-card">
+    <h5 style="color: #c15e0c">Historique entrepots</h5>
+    <div id="resultsTable">
+      <div class="table-responsive">
+        <table id="example" style="width:100%" class="table table-striped">
+          <thead>
+          <tr>
+            <th>Libellé</th>
+            <th>Superficie (M²)</th>
+            <th width="45%">Placer</th>
+            <th></th>
+            <th></th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Ashton Cox</td>
+            <td>Junior Technical Author</td>
+            <td>San Francisco</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Cedric Kelly</td>
+            <td>Senior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Airi Satou</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Brielle Williamson</td>
+            <td>Integration Specialist</td>
+            <td>New York</td>
+            <td></td>
+            <td></td>
+            <td>
+              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
+              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

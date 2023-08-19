@@ -42,3 +42,7 @@
 .form-control{
   outline-style: none;
 }
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}

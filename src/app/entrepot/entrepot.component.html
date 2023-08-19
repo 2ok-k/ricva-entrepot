@@ -1,265 +1,26 @@
-<!--
-
-
-
-&lt;!&ndash; SIDEBAR &ndash;&gt;
-<section id="sidebar">
-  <a href="#" class="brand">
-    <span class="text">
-      <img src="assets/images/speculations.png" width="290">
-    </span>
-  </a>
-  <ul class="side-menu top">
-    <li>
-      <a href="#">
-        <span class="text">Campagnes</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Détails campagnes</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Spéculations</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Détails Spéculations</span>
-      </a>
-    </li>
-    <li class="active">
-      <a href="#">
-        <span class="text">Entrepots</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Groupements</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Exportateurs</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Affectations exportateurs</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Villes</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Sites</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="text">Zonages</span>
-      </a>
-    </li>
-  </ul>
-</section>
-&lt;!&ndash; SIDEBAR &ndash;&gt;
-
-
-
-&lt;!&ndash; CONTENT &ndash;&gt;
-<section id="content">
-  &lt;!&ndash; NAVBAR &ndash;&gt;
-  <nav>
-    <a href="#" class="nav-link"></a>
-    <form action="#">
-      <div class="form-input">
-      </div>
-    </form>
-    <input type="checkbox" id="switch-mode" hidden>
-    <label for="switch-mode" class="switch-mode"></label>
-    <div class="card" style="width: 55px;padding: 5px;background-color: #2384ef;border-color: #2384ef">
-      <a href="#" class="notification"
-         style="text-decoration: none;
-         font-size: 10px
-         ;text-align: center;color:white">
-        <i class='bx bxs-bell'></i> 12
-      </a>
-    </div>
-    <a href="#" class="profile">
-      <img src="img/people.png">
-    </a>
-  </nav>
-  &lt;!&ndash; NAVBAR &ndash;&gt;
-
-  &lt;!&ndash; MAIN &ndash;&gt;
-  <main>
-    <div class="head-title">
-      <div class="left">
-        <h1>Dashboard</h1>
-        <ul class="breadcrumb">
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li><i class='bx bx-chevron-right' ></i></li>
-          <li>
-            <a class="active" href="#">Home</a>
-          </li>
-        </ul>
-      </div>
-      <a href="#" class="btn-download">
-        <i class='bx bxs-cloud-download' ></i>
-        <span class="text">Download PDF</span>
-      </a>
-    </div>
-
-    <ul class="box-info">
-      <li>
-        <i class='bx bxs-calendar-check' ></i>
-        <span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
-					</span>
-      </li>
-      <li>
-        <i class='bx bxs-group' ></i>
-        <span class="text">
-						<h3>2834</h3>
-						<p>Visitors</p>
-					</span>
-      </li>
-      <li>
-        <i class='bx bxs-dollar-circle' ></i>
-        <span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
-					</span>
-      </li>
-    </ul>
-
-
-    <div class="table-data">
-      <div class="order">
-        <div class="head">
-          <h3>Recent Orders</h3>
-          <i class='bx bx-search' ></i>
-          <i class='bx bx-filter' ></i>
-        </div>
-        <table>
-          <thead>
-          <tr>
-            <th>User</th>
-            <th>Date Order</th>
-            <th>Status</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status completed">Completed</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status process">Process</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
-          <tr>
-            <td>
-              <img src="img/people.png">
-              <p>John Doe</p>
-            </td>
-            <td>01-10-2021</td>
-            <td><span class="status completed">Completed</span></td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="todo">
-        <div class="head">
-          <h3>Todos</h3>
-          <i class='bx bx-plus' ></i>
-          <i class='bx bx-filter' ></i>
-        </div>
-        <ul class="todo-list">
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="not-completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-          <li class="not-completed">
-            <p>Todo List</p>
-            <i class='bx bx-dots-vertical-rounded' ></i>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
-  &lt;!&ndash; MAIN &ndash;&gt;
-</section>
-&lt;!&ndash; CONTENT &ndash;&gt;
-
--->
-
-
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 top-bar" style="display: flex; align-items: center;">
       <div class="logo" style="margin-right: auto;">
         <img src="assets/images/speculations.png" alt="Logo" width="300">
       </div>
-      <div class="card mr-1" style="margin-right: 10px;width: 55px; padding: 5px; background-color: #2384ef; border-color: #2384ef;">
-        <a href="#" class="notification" style="text-decoration: none; font-size: 10px; text-align: center; color: white;">
+      <div class="card-notif mr-1 m-lg-3" style="margin-right: 10px;width: 50px; background-color: #2384ef; border-color: #2384ef;">
+        <a href="#" class="notification" style="margin-top: 12%; margin-left:9px ;text-decoration: none; font-size: 10px; text-align: center; color: white;">
           <i class='bx bxs-bell'></i> 12
         </a>
       </div>
-      <div class="language-box mr-1" style="margin-right: 10px;">
-        <img src="flag.png" alt="Drapeau" style="width: 20px; height: 15px;">
+      <div class="language-box mr-1 m-lg-3" style="margin-right: 10px;">
+        <img src="assets/images/france.png" style="width: 35px; height: 30px">
         <div class="dropdown-content">
-          <a href="#">Français</a>
-          <a href="#">Anglais</a>
-          <a href="#">Espagnol</a>
+          <img src="assets/images/united-states.png" style="width: 30px; height: 25px">
         </div>
       </div>
-      <div class="user-box" style="margin-right: 10px;">John Doe
+      <div class="user-box d-flex m-lg-4" style="margin-right: 10px; align-items: center;position: relative;">
+        <div class="user-img-box"></div>
+        <div class="user-details">
+          <div class="user-name">CAP SIKAN</div>
+          <div class="chevron-icon"><i class="bx bx-chevron-down"></i></div>
+        </div>
         <div class="dropdown-content">
           <a href="#">Profil</a>
           <a href="#">Paramètres</a>
@@ -278,57 +39,12 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2 menu-card">
-      <div>
-        <a href="" class="menu-item">Campagnes</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Détails campagnes</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Spéculations</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Détails Spéculations</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item active">Entrepots</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Groupements</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Exportateurs</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Affectations exportateurs</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Villes</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Sites</a>
-      </div>
-      <br>
-      <div>
-        <a href="" class="menu-item">Zonages</a>
-      </div>
-    </div>
-    <div class="col-md-9 content-card">
-      Contenu en fonction du menu sélectionné
-    </div>
+
+
+<!--  <router-outlet></router-outlet>-->
+<!--<app-list></app-list>-->
+<app-add></app-add>
   </div>
-</div>
 
 
 
