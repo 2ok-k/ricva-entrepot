@@ -20,21 +20,21 @@
               <h4 class="login-heading mb-4" style="margin-left: 37%"><strong>Inscription</strong></h4>
               <form>
                 <label for="email">Email ou Téléphone</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
 
                 <label for="password">Mot de passe</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" name="password">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" name="password" [(ngModel)]="password1">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-eye"></i>
+                    <span class="input-group-text" (click)="toggleShowPassword()">
+                      <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
                     </span>
                   </div>
                 </div>
                 <br>
                 <div class="d-grid">
-                  <button class="btn btn-login fw-bold mb-2" type="submit">S'inscrire</button>
-                  <div class="text-center">Déjà un compte? <a class="switch" routerLink="/register" >Se connecter</a></div>
+                  <button class="btn btn-login fw-bold mb-2" type="submit" (click)="register()">S'inscrire</button>
+                  <div class="text-center">Déjà un compte? <a class="switch" routerLink="/login" >Se connecter</a></div>
                 </div>
               </form>
             </div>

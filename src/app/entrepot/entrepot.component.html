@@ -18,13 +18,13 @@
       <div class="user-box d-flex m-lg-4" style="margin-right: 10px; align-items: center;position: relative;">
         <div class="user-img-box"></div>
         <div class="user-details">
-          <div class="user-name">CAP SIKAN</div>
+          <div class="user-name">{{userEmail}}</div>
           <div class="chevron-icon"><i class="bx bx-chevron-down"></i></div>
         </div>
         <div class="dropdown-content">
           <a href="#">Profil</a>
           <a href="#">Paramètres</a>
-          <a href="#">Déconnexion</a>
+          <a (click)="logout()">Déconnexion</a>
         </div>
       </div>
     </div>
@@ -34,17 +34,20 @@
       <div class="col-md-2" style="margin-right: -15px; color: #a6a2a2">
         Tableau de bord > Administration
       </div>
-      <div class="col-md-2" >
-        <button class="btn btn-orange">Créer un entrepôt</button>
+      <div class="col-md-2">
+        <a class="btn btn-previous" routerLink="/entrepot/list" id="prevButton" *ngIf="!isCreateMode" (click)="toggleMode()">
+          <i class="bx bx-chevron-left" style="color: #d27532"></i> Précédent
+        </a>
+        <a class="btn btn-orange" routerLink="/entrepot/add" id="createButton" *ngIf="isCreateMode" (click)="toggleMode()">
+          Créer un entrepôt
+        </a>
       </div>
     </div>
   </div>
 
 
-<!--  <router-outlet></router-outlet>-->
-<!--<app-list></app-list>-->
-<app-add></app-add>
-  </div>
+<router-outlet></router-outlet>
+</div>
 
 
 

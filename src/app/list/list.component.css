@@ -216,3 +216,51 @@ th {
     display: block;
   }
 }
+
+  /*
+  Modal
+   */
+.btn-annuler{
+  background-color: #F0EAE7;
+  border-radius: 5px;
+  padding: 8px;
+  color: #d27532;
+  width: 100px;
+  text-decoration: none;
+  margin-left: 10%;
+  align-items: center;
+  text-align: center;
+}
+.btn-annuler:hover{
+  background-color: #d27532;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+  width: 100px;
+  margin-left: 10%;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-okay{
+  background-color: #d27532;
+  border-radius: 5px;
+  padding: 8px;
+  color: #F0EAE7;
+  width: 100px;
+  text-decoration: none;
+  margin-left: 40%;
+  align-items: center;
+  text-align: center;
+}
+.btn-okay:hover{
+  background-color: #c15e0c;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+  width: 100px;
+  margin-left: 40%;
+  align-items: center;
+  text-align: center;
+}
+

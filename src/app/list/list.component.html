@@ -1,3 +1,9 @@
+<ngx-spinner
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple" >
+  <p style="font-size: 20px; color: white">Chargement...</p>
+</ngx-spinner>
 <div class="row">
   <div class="col-md-2 col-sm-4 menu-card">
     <div class="mobile-menu-toggle">
@@ -65,80 +71,45 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
+          <tr *ngFor="let entrepot of entrepotData">
+            <td>{{ entrepot.libelle }}</td>
+            <td>{{ entrepot.superficie }}</td>
+            <td>{{ entrepot.placer }}</td>
             <td></td>
             <td></td>
             <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td></td>
-            <td></td>
-            <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Ashton Cox</td>
-            <td>Junior Technical Author</td>
-            <td>San Francisco</td>
-            <td></td>
-            <td></td>
-            <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Cedric Kelly</td>
-            <td>Senior Javascript Developer</td>
-            <td>Edinburgh</td>
-            <td></td>
-            <td></td>
-            <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Airi Satou</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td></td>
-            <td></td>
-            <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
-            </td>
-          </tr>
-          <tr>
-            <td>Brielle Williamson</td>
-            <td>Integration Specialist</td>
-            <td>New York</td>
-            <td></td>
-            <td></td>
-            <td>
-              <fa-icon [icon]="trash" class="trash-btn mr-5"></fa-icon>
+              <button type="button" class="trash-btn" data-toggle="modal" data-target="#deleteModal" (click)="setEntrepotToDelete(entrepot)">
+                <i class="bx bx-trash"></i>
+              </button>
               <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
               <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
             </td>
           </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                style="position: relative; left: -5px;
+                font-size: 12px;
+                color: #d27532;
+                background-color: #F0EAE7;border-radius: 50%">X</button>
+      </div>
+      <div class="modal-body">
+        <h5 style="color: #d27532;text-align: center"><strong>Voulez-vous supprimer?</strong></h5>
+        <p style="color: #3b4550;text-align: center;font-size: 10px">Cras mattis consectetur purus sit amet fermentum. Cras justo
+          odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+      </div>
+      <div class="d-flex">
+        <a href="" class="btn-annuler my-2 mb-5" data-dismiss="modal">Non</a>
+        <a (click)="deleteEntrepot()" class="btn-okay btn-info my-2 mr-2 mb-5" >Oui</a>
       </div>
     </div>
   </div>

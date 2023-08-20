@@ -1,14 +1,21 @@
 <div class="row">
   <div class="col-md-12">
     <div class="add-card">
+      <div *ngIf="showSuccessMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        Entrepot ajouté avec succès!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="hideSuccessMessage()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <h5 style="color: #c15e0c">Créer un entrepôt</h5><br>
-      <form>
+      <form [formGroup]="entrepotForm">
         <div class="form-row">
           <div class="form-group">
             <label for="inputLibelle">Libellé</label>
             <div class="select-wrapper">
-              <select id="inputLibelle" class="form-control">
-                <option>...</option>
+              <select id="inputLibelle" class="form-control" formControlName="libelle">
+                <option></option>
+                <option>ACIPAC YOP</option>
               </select>
               <i class="bx bx-chevron-down" style="color: #d27532"></i>
             </div>
@@ -16,8 +23,9 @@
           <div class="form-group">
             <label for="inputLongitude">Longitude</label>
             <div class="select-wrapper">
-              <select id="inputLongitude" class="form-control">
-                <option>...</option>
+              <select id="inputLongitude" class="form-control" formControlName="longitude">
+                <option></option>
+                <option>12000</option>
               </select>
               <i class="bx bx-chevron-down" style="color: #d27532"></i>
             </div>
@@ -26,18 +34,19 @@
         <div class="form-row">
           <div class="form-group">
             <label for="inputSuperficie">Superficie (m 2)</label>
-            <input type="number" class="form-control" id="inputSuperficie">
+            <input type="number" class="form-control" id="inputSuperficie" formControlName="superficie">
           </div>
           <div class="form-group">
             <label for="inputLatitude">Latitude</label>
-            <input type="number" class="form-control" id="inputLatitude">
+            <input type="number" class="form-control" id="inputLatitude" formControlName="latitude">
           </div>
         </div>
         <div class="form-group">
           <label for="inputPlacer">Placer</label>
           <div class="select-wrapper">
-            <select id="inputPlacer" class="form-control">
-              <option>...</option>
+            <select id="inputPlacer" class="form-control" formControlName="placer">
+              <option></option>
+              <option>YOP ZONE INDUSTRIELLE</option>
             </select>
             <i class="bx bx-chevron-down" style="color: #d27532"></i>
           </div>
@@ -48,9 +57,34 @@
         <br>
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-cancel btn-block">Annuler</button>
-          <button type="submit" class="btn btn-save btn-block">Enregistrer</button>
+<!--          data-toggle="modal" data-target="#addModal"-->
+          <button type="button"  class="btn btn-save btn-block" (click)="addEntrepot()" [disabled]="entrepotForm.invalid">Enregistrer</button>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                style="position: relative; left: -5px;
+                font-size: 12px;
+                color: #d27532;
+                background-color: #F0EAE7;border-radius: 50%">X</button>
+      </div>
+      <div class="modal-body">
+        <h5 style="color: #d27532;text-align: center"><strong>Voulez-vous enregistrer?</strong></h5>
+        <p style="color: #3b4550;text-align: center;font-size: 10px">Cras mattis consectetur purus sit amet fermentum. Cras justo
+          odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+      </div>
+      <div class="d-flex">
+        <a href="" class="btn-annuler my-2 mb-5" data-dismiss="modal">Non</a>
+        <a href="" class="btn-okay btn-info my-2 mr-2 mb-5" >Oui</a>
+      </div>
     </div>
   </div>
 </div>

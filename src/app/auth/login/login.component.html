@@ -18,27 +18,32 @@
                 <img src="assets/images/speculations.png" style="margin-left: -36%">
               </h4>
               <h4 class="login-heading mb-4" style="margin-left: 37%"><strong>Connexion</strong></h4>
+                <div *ngIf="errorMessage1" class="alert alert-danger" role="alert">
+                  {{ errorMessage1 }}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                  {{ errorMessage }}
+                </div>
               <form>
                 <label for="email">Email ou Téléphone</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
 
                 <label for="password">Mot de passe</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="password" name="password">
+                  <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" name="password" [(ngModel)]="password1">
                   <div class="input-group-append">
-                    <span class="input-group-text">
-                      <i class="fa fa-eye"></i>
+                    <span class="input-group-text" (click)="toggleShowPassword()">
+                      <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
                     </span>
                   </div>
                 </div>
                 <br>
                 <div class="d-grid">
-                  <button class="btn btn-login fw-bold mb-2" type="submit">Connexion</button>
+                  <button class="btn btn-login fw-bold mb-2" type="submit" (click)="login()">Connexion</button>
                   <div class="text-center">Pas de compte? <a class="switch" routerLink="/register" >S'inscrire</a></div>
                   <p class="small text-center mb-0 small-text">Vous avez oublié votre mot de passe?</p>
                   <a class="small text-center resetPwd" href=""> <strong>Réinitialiser votre mot de passe</strong></a>
                 </div>
-
               </form>
             </div>
           </div>

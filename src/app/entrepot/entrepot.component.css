@@ -133,6 +133,17 @@ body {
   border-radius: 5px;
   color: white;
 }
+.btn-previous{
+  background-color: #F0EAE7;
+  border-radius: 5px;
+  color: #d27532;
+}
+
+.btn-previous:hover{
+  background-color: #d27532;
+  border-radius: 5px;
+  color: white;
+}
 /********/
 .dataTables_filter input {
   height: 30px !important;

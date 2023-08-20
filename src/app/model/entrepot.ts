@@ -4,5 +4,5 @@ export interface Entrepot {
   superficie: Number;
   placer: string
   longitude: string
-  latitude: string
+  latitude: Number;
 }
