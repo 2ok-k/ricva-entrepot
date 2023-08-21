@@ -27,7 +27,7 @@
       </div>
       <br>
       <div>
-        <a href="" class="btn menu-item active d-flex mr-5">Entrepots <span style="margin-left: 80%">12</span></a>
+        <a href="" class="btn menu-item active d-flex mr-5">Entrepots <span style="margin-left: 80%">{{ totalEntrepots }}</span></a>
       </div>
       <br>
       <div>
@@ -56,10 +56,10 @@
     </div>
   </div>
   <div class="col-md-9 content-card">
-    <h5 style="color: #c15e0c">Historique entrepots</h5>
+    <h5 style="color: #c15e0c">Historique entrepots</h5><br><br>
     <div id="resultsTable">
       <div class="table-responsive">
-        <table id="example" style="width:100%" class="table table-striped">
+        <table id="example" class="table tb">
           <thead>
           <tr>
             <th>Libellé</th>
@@ -81,8 +81,15 @@
               <button type="button" class="trash-btn" data-toggle="modal" data-target="#deleteModal" (click)="setEntrepotToDelete(entrepot)">
                 <i class="bx bx-trash"></i>
               </button>
-              <fa-icon [icon]="arrowRight" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'" class="arrow-btn"></fa-icon>
-              <fa-icon [icon]="edit" *ngIf="showEditButton" class="edit-btn"></fa-icon>
+              <a class="arrow-btn" (click)="toggleEdit()" [style.display]="showArrow ? 'inline-block' : 'none'">
+                <i class="bx bx-chevron-right"></i>
+              </a>
+              <button *ngIf="showEditButton" type="button" class="edit-btn" (click)="getAllDetails(entrepot)" data-toggle="modal" data-target="#editModal">
+                <i class="bx bx-edit"></i>
+              </button>
+              <button *ngIf="showEditButton" type="button" class="details-btn" (click)="getAllDetails(entrepot)" data-toggle="modal" data-target="#detailsModal">
+                <i class="fa fa-eye"></i>
+              </button>
             </td>
           </tr>
           </tbody>
@@ -97,9 +104,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                style="position: relative; left: -5px;
+                style="position: relative; left: 90%;
                 font-size: 12px;
                 color: #d27532;
+                border: none;
+                width: 30px;
+                height: 30px;
                 background-color: #F0EAE7;border-radius: 50%">X</button>
       </div>
       <div class="modal-body">
@@ -110,6 +120,125 @@
       <div class="d-flex">
         <a href="" class="btn-annuler my-2 mb-5" data-dismiss="modal">Non</a>
         <a (click)="deleteEntrepot()" class="btn-okay btn-info my-2 mr-2 mb-5" >Oui</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                style="position: relative; left: 90%;
+                font-size: 12px;
+                color: #d27532;
+                border: none;
+                width: 30px;
+                height: 30px;
+                background-color: #F0EAE7;border-radius: 50%">X</button>
+      </div>
+      <div class="modal-body">
+        <h5 style="color: #d27532;text-align: center"><strong>Modification entrepot</strong></h5><br>
+        <form [formGroup]="editForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputLibelle">Libellé</label>
+              <div class="select-wrapper">
+                <select id="inputLibelle" class="form-control" formControlName="edit_libelle" [value]="entrepotDetail?.libelle">
+                  <option></option>
+                  <option>ACIPAC YOP</option>
+                </select>
+                <i class="bx bx-chevron-down" style="color: #d27532"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLongitude">Longitude</label>
+              <div class="select-wrapper">
+                <select id="inputLongitude" class="form-control" formControlName="edit_longitude" [value]="entrepotDetail?.longitude">
+                  <option></option>
+                  <option>12000</option>
+                </select>
+                <i class="bx bx-chevron-down" style="color: #d27532"></i>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputSuperficie">Superficie (m 2)</label>
+              <input type="number" class="form-control" id="inputSuperficie" formControlName="edit_superficie" [value]="entrepotDetail?.superficie">
+            </div>
+            <div class="form-group">
+              <label for="inputLatitude">Latitude</label>
+              <input type="number" class="form-control" id="inputLatitude" formControlName="edit_latitude" [value]="entrepotDetail?.latitude">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPlacer">Placer</label>
+            <div class="select-wrapper">
+              <select id="inputPlacer" class="form-control" formControlName="edit_placer" [value]="entrepotDetail?.placer">
+                <option></option>
+                <option>YOP ZONE INDUSTRIELLE</option>
+              </select>
+              <i class="bx bx-chevron-down" style="color: #d27532"></i>
+            </div>
+          </div>
+          <br>
+        </form>
+      </div>
+      <div class="d-flex">
+        <a href="" class="btn-annuler my-2 mb-5" data-dismiss="modal">Annuler</a>
+        <button type="button" class="btn-okay btn-info my-2 mr-2 mb-5" (click)="updateEntrepot(entrepotDetail)" [disabled]="editForm.invalid">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                style="position: relative; left: 90%;
+                font-size: 12px;
+                color: #d27532;
+                border: none;
+                width: 30px;
+                height: 30px;
+                background-color: #F0EAE7;border-radius: 50%">X</button>
+      </div>
+      <div class="modal-body">
+        <h5 style="color: #d27532;text-align: center"><strong>Détails entrepot</strong></h5><br>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputLibelle">Libellé</label>
+              <input type="text" class="form-control" readonly id="inputLibelle" formControlName="edit_libelle" [value]="entrepotDetail?.libelle">
+            </div>
+            <div class="form-group">
+              <label for="inputLongitude">Longitude</label>
+              <input type="number" class="form-control" readonly id="inputLongitude" formControlName="edit_longitude" [value]="entrepotDetail?.longitude">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputSuperficie">Superficie (m 2)</label>
+              <input type="number" class="form-control" readonly id="inputSuperficie" formControlName="edit_superficie" [value]="entrepotDetail?.superficie">
+            </div>
+            <div class="form-group">
+              <label for="inputLatitude">Latitude</label>
+              <input type="number" class="form-control" readonly id="inputLatitude" formControlName="edit_latitude" [value]="entrepotDetail?.latitude">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPlacer">Placer</label>
+            <input type="text" class="form-control" readonly id="inputPlacer" formControlName="edit_placer" [value]="entrepotDetail?.placer">
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+        </form>
       </div>
     </div>
   </div>

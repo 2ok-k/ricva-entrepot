@@ -57,6 +57,7 @@ body {
   align-items: center;
   border: 1px solid #dee2e6;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .user-img-box {

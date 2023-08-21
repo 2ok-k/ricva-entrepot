@@ -22,6 +22,7 @@ export class ListComponent implements OnInit{
   entrepotDetail: any;
   entrepotData: any = [];
   showSuccessMessage: boolean = false;
+  totalEntrepots: number = 0;
   hideSuccessMessage() {
     this.showSuccessMessage = false;
   };
@@ -56,6 +57,7 @@ export class ListComponent implements OnInit{
     this.entrepotService.getEntrepot().subscribe((res:Entrepot[]) => {
       console.log(res);
       this.entrepotData = res;
+      this.totalEntrepots = res.length;
       this.spinner.hide();
     })
   }

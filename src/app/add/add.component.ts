@@ -11,6 +11,8 @@ import {Entrepot} from "../model/entrepot";
 })
 export class AddComponent implements OnInit{
 
+  showConfirmationModal = false;
+
   entrepotForm!: FormGroup;
   showSuccessMessage: boolean = false;
   hideSuccessMessage() {
@@ -43,7 +45,11 @@ export class AddComponent implements OnInit{
   ngOnInit() {
   }
 
-  addEntrepot(){
+  addEntrepot() {
+    this.showConfirmationModal = true;
+  }
+
+  confirmAddEntrepot(){
     const { value } = this.entrepotForm;
     console.log(value);
     this.entrepotObj.id = '';
@@ -56,7 +62,7 @@ export class AddComponent implements OnInit{
     this.entrepotService.addEntrepot(this.entrepotObj).then((entrepot) =>{
       if (entrepot){
         this.showSuccessMessage = true;
-        //window.location.reload();
+        window.location.reload();
         this.entrepotForm.reset();
       }
     })

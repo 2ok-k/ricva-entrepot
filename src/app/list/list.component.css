@@ -26,6 +26,7 @@ body {
   padding: 20px;
   margin: 20px;
   background-color: white;
+  border: 1px solid #dee2e6;
 }
 .menu-item{
   padding: 8px;
@@ -161,7 +162,7 @@ th {
   margin-top: 40% !important;
 }
 
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+.tb > tbody > tr:nth-child(2n+1) > td, .tb > tbody > tr:nth-child(2n+1) > th {
   background-color: #fdf7f2;
 }
 
@@ -171,6 +172,7 @@ th {
   border-radius: 3px;
   background-color: #d27532;
   color: white;
+  border: none;
 }
 .edit-btn{
   padding: 5px 10px;
@@ -179,10 +181,26 @@ th {
   background-color: #d27532;
   color: white;
   margin-left: 3%;
+  border: none;
+  cursor: pointer;
+}
+.details-btn{
+  padding: 5px 10px;
+  font-size: 10px;
+  border-radius: 3px;
+  background-color: #d27532;
+  color: white;
+  margin-left: 3%;
+  border: none;
+  cursor: pointer;
 }
 .arrow-btn{
+  padding: 0px 0px;
   margin-left: 40%;
-  color: #9da3a9;
+  color: #777b7f;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 
@@ -214,6 +232,12 @@ th {
 
   .menu-card.active .menu-items {
     display: block;
+  }
+}
+@media (max-width: 767px) {
+  .content-card {
+    padding: 10px;
+    margin: 10px;
   }
 }
 
@@ -252,6 +276,7 @@ th {
   margin-left: 40%;
   align-items: center;
   text-align: center;
+  border: none;
 }
 .btn-okay:hover{
   background-color: #c15e0c;
@@ -262,5 +287,21 @@ th {
   margin-left: 40%;
   align-items: center;
   text-align: center;
+  border: none;
+}
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  padding-right: 40px;
+}
+
+.select-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
