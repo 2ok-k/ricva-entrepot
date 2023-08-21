@@ -46,6 +46,10 @@ body {
   font-weight: bold;
 }
 
+.totalItem{
+  margin-left: 10%;
+}
+
 
 .user-card,
 .menu-card,

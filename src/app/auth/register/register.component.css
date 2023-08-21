@@ -42,3 +42,32 @@
   outline: none;
   box-shadow: none;
 }
+
+@media (max-width: 767px) {
+  .login {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bg-image {
+    display: none;
+  }
+
+  .col-md-9 {
+    margin-top: 20px;
+  }
+
+  .login-heading {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .btn-login {
+    width: 100%;
+    margin-left: 0;
+  }
+  .switch,
+  .resetPwd {
+    margin-left: 10px;
+  }
+}
